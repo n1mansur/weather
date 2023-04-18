@@ -1,0 +1,29 @@
+.cities_list {
+  padding: 50px 0;
+  grid-row: 2/3;
+  grid-column: 1/4;
+}
+.select {
+  padding: 50px 0;
+  grid-row: 2/3;
+  grid-column: 1/4;
+  background: transparent;
+  border: none;
+  color: #b7b7b7;
+  padding: 10px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.city {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  transition: 0.5s ease-in-out;
+  padding: 20px;
+  &:hover {
+    cursor: pointer;
+    color: #fff;
+    box-shadow: 0px 0px 5px #bebebe;
+  }
+}
