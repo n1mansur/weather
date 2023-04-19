@@ -1,50 +1,39 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from './Cities_list.module.scss'
+import { createoptions } from './cities'
+import { getDataAction } from '../../redux/reducer'
+import { useDispatch } from 'react-redux'
+const API_KEY = 'd3f85ab0c810190d954eadfc3332cdd5'
 
 export default function Cities_list() {
+  const dispatch = useDispatch()
+  const getWeather = async (city = 'Tashkent') => {
+    const api_url = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`
+    )
+    const data = await api_url.json()
+    const newData = {
+      wind: data.wind,
+      rain: data.rain,
+      humidity: data.main.humidity,
+      clouds: data.clouds.all,
+      temp: data.main.temp,
+      name: data.name,
+      weather: data.weather[0].main,
+    }
+    dispatch(getDataAction(newData))
+  }
+  useEffect(() => {
+    getWeather()
+  }, [])
   return (
     <>
-      {/*<ul className={styles.cities_list}>
-        <li className="city" id='tashkent'>Tashkent</li>
-        <li className="city" >Samarqand</li>
-      </ul>*/}
-      <select className={styles.select} multiple>
-        <option className={styles.city} value="Tashkent">
-          Tashkent
-        </option>
-        <option className={styles.city} value="Samarqand">
-          Samarqand
-        </option>
-        <option className={styles.city} value="Buhoro">
-          Buhoro
-        </option>
-        <option className={styles.city} value="Xorazim">
-          Xorazim
-        </option>
-        <option className={styles.city} value="Termiz">
-          Termiz
-        </option>
-        <option className={styles.city} value="Jizzax">
-          Jizzax
-        </option>
-        <option className={styles.city} value="Surhondaryo">
-          Surhondaryo
-        </option>
-        <option className={styles.city} value="Qashqadaro">
-          Qashqadaro
-        </option>
-        <option className={styles.city} value="Namangan">
-          Namangan
-        </option>
-        <option className={styles.city} value="Navoi">
-          Navoi
-        </option>
-        <option className={styles.city} value="Farg`ona">
-          Farg`ona
-        </option>
-        <option className={styles.city} value="Qoraqalpog`iston Respublikasi">
-          Qoraqalpog`iston Respublikasi
-        </option>
+      <select
+        className={styles.select}
+        multiple
+        onChange={(e) => getWeather(e.target.value)}
+      >
+        {createoptions}
       </select>
     </>
   )

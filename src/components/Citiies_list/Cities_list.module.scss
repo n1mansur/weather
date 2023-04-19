@@ -21,9 +21,15 @@
   border-radius: 4px;
   transition: 0.5s ease-in-out;
   padding: 20px;
+  background: transparent;
   &:hover {
     cursor: pointer;
     color: #fff;
     box-shadow: 0px 0px 5px #bebebe;
+  }
+  &:checked {
+    background: transparent;
+    color: #fff;
+    box-shadow: inset 0px 0px 5px #bebebe;
   }
 }

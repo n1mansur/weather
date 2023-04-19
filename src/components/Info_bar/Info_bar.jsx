@@ -6,7 +6,7 @@ import Weather_details from '../Weather_details/Weather_details'
 
 export default function Info_bar() {
   return (
-    <div className={styles.infoBar}>
+    <div className={styles.infoBar} id="infoBar">
       <Form />
       <Cities_list />
       <div className={styles.first}></div> {/*hr*/}

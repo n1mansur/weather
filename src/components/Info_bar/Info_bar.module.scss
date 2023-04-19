@@ -2,13 +2,17 @@
   position: fixed;
   top: 0;
   right: 0;
-  width: 450px;
+  max-width: 450px;
+  width: 30%;
   height: 100vh;
   background: rgba(59, 59, 59, 0.534);
   color: #e4e4e4;
   display: grid;
   grid-template-columns: 30px 1fr 30px;
   grid-template-rows: 10% 44% 1% 40% 1%;
+  @media (max-width: 800px) {
+    margin-right: -100%;
+  }
 }
 .first {
   // hr
