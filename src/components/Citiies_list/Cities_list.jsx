@@ -28,13 +28,9 @@ export default function Cities_list() {
   }, [])
   return (
     <>
-      <select
-        className={styles.select}
-        multiple
-        onChange={(e) => getWeather(e.target.value)}
-      >
+      <ul className={styles.select} onClick={(e) => getWeather(e.target.textContent)}>
         {createoptions}
-      </select>
+      </ul>
     </>
   )
 }
