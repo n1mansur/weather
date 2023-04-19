@@ -66,13 +66,23 @@
 }
 .deg {
   font-size: 150px;
+  @media (max-width: 800px) {
+    font-size: 50px;
+  }
 }
 .nameAndDate {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+}
+.date {
+  line-height: 20px;
 }
 .city {
   font-size: 50px;
+  @media (max-width: 800px) {
+    font-size: 20px;
+  }
 }
 .ico {
   display: flex;
