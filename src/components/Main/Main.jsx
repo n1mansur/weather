@@ -57,15 +57,9 @@ export default function Main() {
     }
   }
 
-  const burgerBtn = () => {
-    //console.log(document.getElementById('infoBar'))
-  }
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
-        <button className={styles.burger} onClick={burgerBtn}>
-          <box-icon color="#fff" name="menu"></box-icon>
-        </button>
         <div className={styles.section}>
           <h1 className={styles.title}>The.weather</h1>
           <div className={styles.weather_section}>
