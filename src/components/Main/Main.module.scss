@@ -7,6 +7,7 @@
   @media (max-width: 800px) {
     height: auto;
     position: static;
+    height: 100vh;
   }
   & > .container {
     max-width: 1250px;
@@ -23,6 +24,7 @@
       flex-direction: column;
       align-items: center;
       margin: 0;
+      height: 100vh;
       padding: 0;
     }
   }
