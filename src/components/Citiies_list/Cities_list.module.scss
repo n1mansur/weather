@@ -11,6 +11,7 @@
   border: none;
   color: #b7b7b7;
   padding: 10px;
+  overflow: auto;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -27,7 +28,7 @@
     color: #fff;
     box-shadow: 0px 0px 5px #bebebe;
   }
-  &:checked {
+  &:focus {
     background: transparent;
     color: #fff;
     box-shadow: inset 0px 0px 5px #bebebe;
